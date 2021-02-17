@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block treatment_content %}
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<div class="container">
+	  <a class="logo_div" href="{% url 'index' %}"><img id="logo_img" src="{% static 'images\logo3.png' %}" alt="" style="width: 75%"></a>
+	  <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="oi oi-menu"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="ftco-nav">
+		<ul class="navbar-nav ml-auto">
+		  <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+		  <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+		  <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+		  <li class="nav-item dropdown" data-toggle="collapse" style="font-size: 13px;">
+			<!-- <p class="after_scroll" style="cursor: pointer;"><a class="nav-link" href="" style="color: white; padding: 0 20px;">Treatment</a></p> -->
+			<a class="nav-link" href="javascript:void(0);" onclick="myFunction()"  style="padding: 0 20px; padding: 14px 10px;">Treatment</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="{% url 'cosmetic_dentistry' %}">COSMETIC DENTISTRY</a></li>
+				<li><a class="dropdown-item" href="{% url 'root_canal_treatment' %}">ROOT CANAL TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'crowns_and_bridges' %}">CROWNS AND BRIDGES</a></li>
+				<li><a class="dropdown-item" href="{% url 'teeth_whitening' %}">TEETH WHITENING</a></li>				
+				<li><a class="dropdown-item" href="{% url 'full_mouth_construction' %}">FULL MOUTH CONSTRUCTION</a></li>
+				<li><a class="dropdown-item" href="{% url 'dental_implants' %}">DENTAL IMPLANTS</a></li>
+				<li><a class="dropdown-item" href="{% url 'fluoride_treatment' %}">FLUORIDE TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'kids_dentistry' %}">KIDS DENTISTRY</a></li>
+				<li><a class="dropdown-item" href="{% url 'denture' %}">COMPLETE / PARTIAL DENTURE</a></li>
+				<li><a class="dropdown-item" href="{% url 'extraction' %}">WISDOM TOOTH EXTRACTION</a></li>
+				<li><a class="dropdown-item" href="{% url 'oral_prophylaxis' %}">ORAL PROPHYLAXIS(Professional cleaning)</a></li>
+				<li><a class="dropdown-item" href="{% url 'braces' %}">INVISIBLE BRACES & ORTHODONTIC TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'gum_rehabilation' %}">GUM REHABILATION</a></li>
+				<li><a class="dropdown-item" href="{% url 'covid_protocol' %}">COVID PROTOCOL</a></li>
+			</ul>
+		  </li>			  
+		  <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+		  <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+		  <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+<!-- END nav -->
+
+
+
+
+
+		{% block Cosmetic_Dentistry_content %}
+		{% endblock Cosmetic_Dentistry_content %}
+
+
+		{% block root_canal_treatment_content %}
+		{% endblock root_canal_treatment_content %}
+
+		{% block crowns_and_bridges_content %}
+		{% endblock crowns_and_bridges_content %}
+
+		{% block teeth_whitening_content %}
+		{% endblock teeth_whitening_content %}
+
+		{% block full_mouth_construction_content %}
+		{% endblock full_mouth_construction_content %}
+
+		{% block dental_implants_content %}
+		{% endblock dental_implants_content %}
+
+		{% block fluoride_treatment_content %}
+		{% endblock fluoride_treatment_content %}
+
+		{% block kids_dentistry_content %}
+		{% endblock kids_dentistry_content %}
+
+		{% block denture_content %}
+		{% endblock denture_content %}
+
+		{% block extraction_content %}
+		{% endblock extraction_content %}
+
+		{% block oral_prophylaxis_content %}
+		{% endblock oral_prophylaxis_content %}
+
+		{% block braces_content %}
+		{% endblock braces_content %}
+
+
+
+{% endblock treatment_content %}

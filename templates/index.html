@@ -1,0 +1,663 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block index_content %}
+
+
+
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<div class="container">
+	  <a class="logo_div" href="{% url 'index' %}"><img id="logo_img" src="{% static 'images\logo3.png' %}" alt="" style="width: 75%"></a>
+	  <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="oi oi-menu"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="ftco-nav">
+		<ul class="navbar-nav ml-auto">
+		  <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+		  <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+		  <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+		  <li class="nav-item dropdown" data-toggle="collapse" style="font-size: 13px;">
+			<!-- <p class="after_scroll" style="cursor: pointer;"><a class="nav-link" href="" style="color: white; padding: 0 20px;">Treatment</a></p> -->
+			<a class="nav-link" href="javascript:void(0);" onclick="myFunction()"  style="padding: 0 20px; padding: 14px 10px;">Treatment</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="{% url 'cosmetic_dentistry' %}">COSMETIC DENTISTRY</a></li>
+				<li><a class="dropdown-item" href="{% url 'root_canal_treatment' %}">ROOT CANAL TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'crowns_and_bridges' %}">CROWNS AND BRIDGES</a></li>
+				<li><a class="dropdown-item" href="{% url 'teeth_whitening' %}">TEETH WHITENING</a></li>				
+				<li><a class="dropdown-item" href="{% url 'full_mouth_construction' %}">FULL MOUTH CONSTRUCTION</a></li>
+				<li><a class="dropdown-item" href="{% url 'dental_implants' %}">DENTAL IMPLANTS</a></li>
+				<li><a class="dropdown-item" href="{% url 'fluoride_treatment' %}">FLUORIDE TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'kids_dentistry' %}">KIDS DENTISTRY</a></li>
+				<li><a class="dropdown-item" href="{% url 'denture' %}">COMPLETE / PARTIAL DENTURE</a></li>
+				<li><a class="dropdown-item" href="{% url 'extraction' %}">WISDOM TOOTH EXTRACTION</a></li>
+				<li><a class="dropdown-item" href="{% url 'oral_prophylaxis' %}">ORAL PROPHYLAXIS (Professional cleaning)</a></li>
+				<li><a class="dropdown-item" href="{% url 'braces' %}">INVISIBLE BRACES & ORTHODONTIC TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'gum_rehabilation' %}">GUM REHABILATION</a></li>
+				<li><a class="dropdown-item" href="{% url 'covid_protocol' %}">COVID PROTOCOL</a></li>
+			</ul>
+		  </li>			  
+		  <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+		  <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+		  <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+<!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+      <div class="slider-item" style="background-image: url('static/images/2020-07-14.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Modern Dentistry in a Calm and Relaxed Environment</h1>
+              <p class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">A place for specialized family dental care</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item" style="background-image: url('static/images/IMG_3.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Equipped with hi-tech dental microscope and latest digital technology</h1>  <!--e capital.. and adjust within 2 lines-->
+              <p class="mb-4"></p>
+            </div>
+          </div>
+        </div>
+	  </div>
+	  
+	  <div class="slider-item" style="background-image: url('static/images/IMG_0845 (1).jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }">Equipped with hi-tech dental microscope and latest digital technology</h1>
+              <p class="mb-4"></p>
+            </div>
+          </div>
+        </div>
+	  </div>
+	  
+	  <div class="slider-item" style="background-image: url('static/images/Screenshot_20210107-155801.jpg');">
+        <div class="overlay"></div>
+        <div class="container">
+          <div class="row slider-text align-items-center" data-scrollax-parent="true">
+            <div class="col-md-6 col-sm-12 ftco-animate" data-scrollax=" properties: { translateY: '70%' }">
+              <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }" style="font-size: 40px; width: auto;">Equipped with hi-tech dental microscope and latest digital technology</h1>
+              <p class="mb-4"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ftco-intro">
+    	<div class="container">
+    		<div class="row no-gutters">
+    			<div class="col-md-3 color-1 p-4">
+    				<h3 class="mb-4">Call for Appointment</h3>
+    				<p></p>
+    				<span class="phone-number">+91 90089 09790</span>
+					<br>
+    				<span class="phone-number">+91 86239 45337</span>
+    			</div>
+    			<div class="col-md-4 color-2 p-4">
+    				<h3 class="mb-4">Opening Hours</h3>
+    				<p class="openinghours d-flex">
+    					<span>Monday - Saturday</span>
+    					<span>10:00 AM - 8:00 PM</span>
+    				</p>    				
+    				<p class="openinghours d-flex">
+    					<span>Sunday</span>
+    					<span>10:00 AM - 1:30 PM <br> (on appointment) </span>
+    				</p>
+    			</div>
+    			<div class="col-md-5 color-3 p-4">
+    				<h3 class="mb-2">MULTISPECIALITY DENTAL CLINIC</h3>
+					<p style="font-size: 14px; font-weight: lighter;">Dental treatments carried out by a team of MDS specialist doctors under strict sterlization protocols.The clinic is equipped with hi-tech dental microscope and latest digital technology to serve you best.</p>
+    				
+    			</div>
+    		</div>
+    	</div>
+    </section> 
+  
+
+
+    <section class="ftco-section ftco-services" id="services">
+      <div class="container ">
+      	<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Our Services</h2>
+            <p>We offer our patients the absolute best and latest in dental technology.</p>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-011-dental-care-3"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Root canal treatment with advanced technology</h3>
+              </div>
+            </div>      
+          </div>
+
+		  <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-026-dental-1"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Caps and Bridges <br> (metal free, tooth coloured)</h3>
+              </div>
+            </div>      
+          </div>
+
+		  <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-010-smile"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Smile Designing</h3>
+              </div>
+            </div>      
+          </div>
+
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-032-tooth"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Cosmetic fillings</h3>
+              </div>
+            </div>      
+          </div>
+
+		  <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-015-denture"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Dentures</h3>
+              </div>
+            </div>      
+          </div>
+
+		  <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-024-dental-implant"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Dental Implants</h3>
+              </div>
+            </div>      
+          </div>
+
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-005-tooth-6"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Teeth extraction (removal)</h3>
+              </div>
+            </div>      
+          </div>
+
+		  
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-007-tooth-cleaning"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Teeth cleaning and gum treatment</h3>
+              </div>
+            </div>      
+          </div>
+
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-028-dentist"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Laser assisted dentistry</h3>
+              </div>
+            </div>      
+          </div>
+
+			<div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-002-tooth-7"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Teeth whitening</h3>
+              </div>
+            </div>      
+          </div>
+
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-018-dental-4"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Full mouth rehabilitation</h3>
+              </div>
+            </div>      
+          </div>
+
+		    <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-035-baby"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Kids Dental treatment</h3>
+              </div>
+            </div>      
+          </div>
+
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-004-dental-5"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Orthodontic treatment br (teeth straightening)</h3>
+              </div>
+            </div>      
+          </div>
+
+		   <div class="col-md-2 d-flex align-self-stretch ftco-animate service-card">
+            <div class="media block-6 services d-block text-center">
+              <div class="icon d-flex justify-content-center align-items-center">
+            		<span class="flaticon-029-dental-care"></span>
+              </div>
+              <div class="media-body p-2 mt-3">
+                <h3 class="heading">Other basic treatments</h3>
+              </div>
+            </div>      
+          </div>
+		
+		
+          
+        </div>
+      </div>
+      <div class="container-wrap mt-5">
+      	<div class="row d-flex no-gutters">
+      		<div class="col-md-6 img" style="background-image: url(static/images/dr_ankit.jpg);">
+			  <!-- <img class="img" src="static/images/dr_ankit.jpg" alt=""> -->
+      		</div>
+      		<div class="col-md-6 d-flex">
+      			<div class="about-wrap">
+      				<div class="heading-section heading-section-white mb-5 ftco-animate">
+		            <h2 class="mb-2">Why are we the best?</h2>
+		          </div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Hi-Tech Dentistry</h3>
+	      					<p>Advanced smile makeovers, full mouth dental implants, zirconia and CAD CAM crowns, laser dentistry, invisible braces - we offer our patients the absolute best and latest in dental technology. </p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>High Technology Facilities</h3>
+	      					<p>High standard sterilization maintained for patient's safety. We follow strict and stringent sterilization protocols.</p>
+      					</div>
+      				</div>
+      				<div class="list-services d-flex ftco-animate">
+      					<div class="icon d-flex justify-content-center align-items-center">
+      						<span class="icon-check2"></span>
+      					</div>
+      					<div class="text">
+	      					<h3>Comfortable Clinics</h3>
+	      					<p>Dental treatment by team of specialist dentists. we will always be there for you for years to come.</p>
+      					</div>
+      				</div>
+      			</div>
+      		</div>
+      	</div>
+      </div>
+    </section>
+
+
+    <section class="ftco-section">
+      <div class="container">
+      	<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Meet Our Experienced Dental Team</h2>
+            <p>We believe in a specialist approach to dentistry and we have a team of specialists. <br> Each of our specialist dentists has received advanced training, <br> so you will always be in the best of hands!!</p>
+          </div>
+		</div>
+      </div>
+        <div class="row justify-content-center">
+        	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(static/images/dr_ankit_profile.jpg);"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Ankit Patel</a></h3>
+      					<span class="position">MDS Endodontic and Conservative Dentistry (root canal and filling specialist)</span>
+      					<div class="text">
+	        				<ul class="ftco-social">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            	</ul>
+						</div>
+      				</div>
+        		</div>
+			</div>
+			
+        	<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(static/images/dr_ruta_profile.jpg);"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Ruta Jadhav</a></h3>
+      					<span class="position">MDS Prosthodontics and Implantologist</span>
+      					<div class="text" style="margin-top: 30px;">
+	        				<ul class="ftco-social">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            	</ul>
+	        			</div>
+      				</div>
+        		</div>
+			</div>
+
+			<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(static/images/dr_hitesh.jpg);"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Hitesh Navaparia</a></h3>
+      					<span class="position">MDS Oral and maxillofacial surgeon, <br> PhD pursuing
+							Fellowship in Cleft and Craniofacial surgery
+							</span>
+      					<div class="text" style="margin-top: 30px;">
+	        				<ul class="ftco-social">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            	</ul>
+	        			</div>
+      				</div>
+        		</div>
+			</div>
+		</div>  
+		<div class="row justify-content-center">			
+			<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(static/images/dr_abhijit.jpg);"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Abhijit</a></h3>
+      					<span class="position">MDS Orthodontics</span>
+      					<div class="text" style="margin-top: 30px;">
+	        				<ul class="ftco-social">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            	</ul>
+	        			</div>
+      				</div>
+        		</div>
+			</div>
+			
+			<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(static/images/dr_sonal.jpg);"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Sonal Parmar</a></h3>
+      					<span class="position">MDS periodontics(gum specialist)</span>
+      					<div class="text" style="margin-top: 30px;">
+	        				<ul class="ftco-social">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            	</ul>
+	        			</div>
+      				</div>
+        		</div>
+			</div>
+			
+			<div class="col-lg-3 d-flex mb-sm-4 ftco-animate">
+        		<div class="staff">
+      				<div class="img mb-4" style="background-image: url(static/images/person_6.jpg);"></div>
+      				<div class="info text-center">
+      					<h3><a href="teacher-single.html">Dr. Parth</a></h3>
+      					<span class="position">MDS Pedodontics(kids specialist)</span>
+      					<div class="text" style="margin-top: 30px;">
+	        				<ul class="ftco-social">
+								<li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+								<li class="ftco-animate"><a href="#"><span class="icon-google-plus"></span></a></li>
+			            	</ul>
+	        			</div>
+      				</div>
+        		</div>
+        	</div>
+        </div>       
+      </div>
+    </section>
+
+    <!-- <section class="ftco-section ftco-counter img" id="section-counter" style="background-image: url(static/images/bg_1.jpg);" data-stellar-background-ratio="0.5">
+    	<div class="container">
+    		<div class="row d-flex align-items-center">
+    			<div class="col-md-3 aside-stretch py-5">
+    				<div class=" heading-section heading-section-white ftco-animate pr-md-4">
+	            <h2 class="mb-3">Achievements</h2>
+	            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+	          </div>
+    			</div>
+    			<div class="col-md-9 py-5 pl-md-5">
+		    		<div class="row">
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="14">0</strong>
+		                <span>Years of Experience</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4500">0</strong>
+		                <span>Qualified Dentist</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="4200">0</strong>
+		                <span>Happy Smiling Customer</span>
+		              </div>
+		            </div>
+		          </div>
+		          <div class="col-md-3 d-flex justify-content-center counter-wrap ftco-animate">
+		            <div class="block-18">
+		              <div class="text">
+		                <strong class="number" data-number="320">0</strong>
+		                <span>Patients Per Year</span>
+		              </div>
+		            </div>
+		          </div>
+		        </div>
+		      </div>
+	      </div>
+    	</div>
+    </section>  -->
+
+    <!-- <section class="ftco-section">
+    	<div class="container">
+    		<div class="row justify-content-center mb-5 pb-5">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-3">Our Best Pricing</h2>
+            <p>A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+          </div>
+        </div>
+    		<div class="row">
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Basic</h3>
+	        			<p><span class="price">$24.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Standard</h3>
+	        			<p><span class="price">$34.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry active pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Premium</h3>
+	        			<p><span class="price">$54.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        		</div>
+        	</div>
+        	<div class="col-md-3 ftco-animate">
+        		<div class="pricing-entry pb-5 text-center">
+        			<div>
+	        			<h3 class="mb-4">Platinum</h3>
+	        			<p><span class="price">$89.50</span> <span class="per">/ session</span></p>
+	        		</div>
+        			<ul>
+        				<li>Diagnostic Services</li>
+								<li>Professional Consultation</li>
+								<li>Tooth Implants</li>
+								<li>Surgical Extractions</li>
+								<li>Teeth Whitening</li>
+        			</ul>
+        		</div>
+        	</div>
+        </div>
+    	</div>
+    </section>  -->
+
+     <!-- <section class="ftco-section-parallax">
+      <div class="parallax-img d-flex align-items-center">
+        <div class="container">
+          <div class="row d-flex justify-content-center">
+            <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
+              <h2>Subcribe to our Newsletter</h2>
+              <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in</p>
+              <div class="row d-flex justify-content-center mt-5">
+                <div class="col-md-8">
+                  <form action="#" class="subscribe-form">
+                    <div class="form-group d-flex">
+                      <input type="text" class="form-control" placeholder="Enter email address">
+                      <input type="submit" value="Subscribe" class="submit px-3">
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>  -->
+
+	
+		
+	<section class="ftco-section testimony-section bg-light">
+      <div class="container">
+        <div class="row justify-content-center mb-5 pb-3">
+          <div class="col-md-7 text-center heading-section ftco-animate">
+            <h2 class="mb-2">Testimony</h2>
+            <span class="subheading">Our Happy Customers Says</span>
+          </div>
+        </div>
+        <div class="row justify-content-center ftco-animate">
+          <div class="col-md-8">
+            <div class="carousel-testimony owl-carousel ftco-owl">
+
+				{% for i in testimonial_data %}				
+					<div class="item">
+						<div class="testimony-wrap p-4 pb-5">	
+							<div class="user-img mb-5">								
+								<img class="user-img" src="media/{{i.images}}" alt="">								
+							<span class="quote d-flex align-items-center justify-content-center">
+								<i class="icon-quote-left"></i>
+							</span>
+						</div>			 					             
+						<div class="text text-center">
+							<p class="mb-">{{i.message}}</p> 
+							<p class="name" style="margin-top: 20px;">{{i.name}}</p>
+							<p>{{i.company_name}}</p>
+							<span>{{i.designation}}</span>
+						</div>
+						</div>
+					</div>
+			   {% endfor %}     
+			  
+			  
+          </div>
+        </div>
+      </div>
+    </section> 
+
+	<div class="review_vid">		
+		<video controls loop src="{% static 'images/review.mp4' %}"></video>		
+	</div>
+    
+		
+	
+		
+	<div><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.234442122232!2d72.80256771424736!3d21.143066389243668!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be0512ac38f618d%3A0x1ce8f65cd0ac8005!2sROOTS%20DENTAL%20CARE!5e0!3m2!1sen!2sin!4v1597922210915!5m2!1sen!2sin" width="100%" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe></div>
+		
+	
+{% endblock index_content %}
+

@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block blog_content %}
+
+
+<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	<div class="container">
+	  <a class="logo_div" href="{% url 'index' %}"><img id="logo_img" src="{% static 'images\logo3.png' %}" alt="" style="width: 75%"></a>
+	  <button style="float: right;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="oi oi-menu"></span>
+	  </button>
+
+	  <div class="collapse navbar-collapse" id="ftco-nav">
+		<ul class="navbar-nav ml-auto">
+		  <li class="nav-item active"><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+		  <li class="nav-item"><a href="{% url 'about' %}" class="nav-link">About</a></li>
+		  <li class="nav-item"><a href="{% url 'services' %}" class="nav-link">Services</a></li>
+		  <li class="nav-item dropdown" data-toggle="collapse" style="font-size: 13px;">
+			<!-- <p class="after_scroll" style="cursor: pointer;"><a class="nav-link" href="" style="color: white; padding: 0 20px;">Treatment</a></p> -->
+			<a class="nav-link" href="javascript:void(0);" onclick="myFunction()"  style="padding: 0 20px; padding: 14px 10px;">Treatment</a>
+			<ul class="dropdown-menu">
+				<li><a class="dropdown-item" href="{% url 'cosmetic_dentistry' %}">COSMETIC DENTISTRY</a></li>
+				<li><a class="dropdown-item" href="{% url 'root_canal_treatment' %}">ROOT CANAL TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'crowns_and_bridges' %}">CROWNS AND BRIDGES</a></li>
+				<li><a class="dropdown-item" href="{% url 'teeth_whitening' %}">TEETH WHITENING</a></li>				
+				<li><a class="dropdown-item" href="{% url 'full_mouth_construction' %}">FULL MOUTH CONSTRUCTION</a></li>
+				<li><a class="dropdown-item" href="{% url 'dental_implants' %}">DENTAL IMPLANTS</a></li>
+				<li><a class="dropdown-item" href="{% url 'fluoride_treatment' %}">FLUORIDE TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'kids_dentistry' %}">KIDS DENTISTRY</a></li>
+				<li><a class="dropdown-item" href="{% url 'denture' %}">COMPLETE / PARTIAL DENTURE</a></li>
+				<li><a class="dropdown-item" href="{% url 'extraction' %}">WISDOM TOOTH EXTRACTION</a></li>
+				<li><a class="dropdown-item" href="{% url 'oral_prophylaxis' %}">ORAL PROPHYLAXIS(Professional cleaning)</a></li>
+				<li><a class="dropdown-item" href="{% url 'braces' %}">INVISIBLE BRACES & ORTHODONTIC TREATMENT</a></li>
+				<li><a class="dropdown-item" href="{% url 'gum_rehabilation' %}">GUM REHABILATION</a></li>
+				<li><a class="dropdown-item" href="{% url 'covid_protocol' %}">COVID PROTOCOL</a></li>
+			</ul>
+		  </li>			  
+		  <li class="nav-item"><a href="{% url 'gallery' %}" class="nav-link">Gallery</a></li>
+		  <li class="nav-item"><a href="{% url 'blog' %}" class="nav-link">Blog</a></li>
+		  <li class="nav-item"><a href="#footer" class="nav-link">Contact</a></li>
+		</ul>
+	  </div>
+	</div>
+  </nav>
+<!-- END nav -->
+
+    <section class="home-slider owl-carousel">
+      <div class="slider-item bread-item" style="background-image: url('static/images/bg_1.jpg');" data-stellar-background-ratio="0.5">
+        <div class="overlay"></div>
+        <div class="container" data-scrollax-parent="true">
+          <div class="row slider-text align-items-end">
+            <div class="col-md-7 col-sm-12 ftco-animate mb-5">
+              <p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span class="mr-2">Home</span> <span>Blog</span></p>
+              <h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Read Our Blog</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+		
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-8">
+				<div class="row">
+
+				{% for i in blog_data %}
+
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry">
+							<div style="width: 720px; height: 350px; overflow: hidden;">
+								<img style="width: 720px; height: 450px;" src="media/{{i.images}}" alt="">
+							</div>
+						<div class="text d-flex py-4">
+							<div class="meta mb-3">
+								<div>{{i.date}}</div>
+								<div>{{i.name}}</div>		                  
+							</div>
+							<div class="desc pl-sm-3 pl-md-5">
+								<h3 class="heading">{{i.title}}</h3>
+								<p class="mb-2">{{i.blog_field}}</p>								
+								<p><a href="" class="btn btn-primary btn-outline-primary">Read more</a></p>
+							</div>
+						</div>
+						</div>
+					</div>
+					</div>
+
+				{% endfor %}
+
+				{% comment %} <div class="row mt-5">
+		          <div class="col">
+		            <div class="block-27">
+		              <ul>
+		                <li><a href="#">&lt;</a></li>
+		                <li class="active"><span>1</span></li>
+		                <li><a href="#">2</a></li>
+		                <li><a href="#">3</a></li>
+		                <li><a href="#">4</a></li>
+		                <li><a href="#">5</a></li>
+		                <li><a href="#">&gt;</a></li>
+		              </ul>
+		            </div>
+		          </div>
+		        </div> {% endcomment %}
+			</div> <!-- END: col-md-8 -->
+
+		<div class="col-md-4 sidebar ftco-animate">           
+            {% comment %} <div class="sidebar-box ftco-animate">
+              <div class="categories">
+                <h3>Categories</h3>
+                <li><a href="#">Food <span>(12)</span></a></li>
+                <li><a href="#">Dish <span>(22)</span></a></li>
+                <li><a href="#">Desserts <span>(37)</span></a></li>
+                <li><a href="#">Drinks <span>(42)</span></a></li>
+                <li><a href="#">Ocassion <span>(14)</span></a></li>
+              </div>
+            </div> {% endcomment %}
+
+            <!-- <div class="sidebar-box ftco-animate">
+              <h3>Recent Blog</h3>
+
+			  {% for i in blog_data %}
+
+              <div class="block-21 mb-4 d-flex">
+                <div class="blog-img mr-4" style="width: 80px; height: 80px; overflow: hidden;">
+					<img style="width: 80px; height: 80px;" src="media/{{i.images}}" alt="">
+				</div>
+                <div class="text">
+                  <h3 class="heading"><a href="{{i.id_title}}">{{i.title}}</a></h3>
+                  <div class="meta">
+                    <div><span class="icon-calendar"></span> &nbsp; {{i.date}}</div>
+                    <div><span class="icon-person"></span> {{i.name}}</div>
+                    {% comment %} <div><a href="#"><span class="icon-chat"></span>{{}}</a></div> {% endcomment %}
+                  </div>
+                </div>
+              </div>
+
+			  {% endfor %}
+            </div> -->
+
+            
+
+           
+				</div>
+			</div>
+		</section>
+
+{% endblock blog_content %}
